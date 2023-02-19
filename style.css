@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'League Spartan', sans-serif;
+}
+
+.main-container[data-theme="theme-1"] {
+    --mainBackground: #3B4664;
+    --displayBackground: #181F32;
+    --touchpad: #252D44;
+    --toggle: #D0402E;
+    --toggleHover: #FE8A33;
+    --textBtn: #404A5A;
+    --textBtnII: #fff;
+    --textBtnIII: #fff;
+    --textColor: #fff;
+    --btnBackground: #EAE3DB;
+    --btnBackgroundHover: #f7f7f7;
+    --borderBtn: #B3A49C;
+    --btnResultBackground: #D13F30;
+    --btnResultBackgroundHover: #F96C5B;
+    --borderResult: #922316;
+    --btnResetAndDelBackground: #647299;
+    --btnResetAndDelBackgroundHover: #A3B3E5;
+    --borderBtnResetAndDel: #424E74;
+}
+
+.main-container[data-theme="theme-2"] {
+    --mainBackground: #E6E6E6;
+    --displayBackground: #EEEEEE;
+    --touchpad: #D3CDCD;
+    --toggle: #D0402E;
+    --toggleHover: #FE8A33;
+    --textBtn: #35352C;
+    --textBtnII: #fff;
+    --textBtnIII: #fff;
+    --textColor: #38382E;
+    --btnBackground: #EAE3DB;
+    --btnBackgroundHover: #f7f7f7;
+    --borderBtn: #A69F8F;
+    --btnResultBackground: #D13F30;
+    --btnResultBackgroundHover: #FE8A33;
+    --borderResult: #922316;
+    --btnResetAndDelBackground: #388187;
+    --btnResetAndDelBackgroundHover: #62B5BD;
+    --borderBtnResetAndDel: #1C6166;
+}
+
+.main-container[data-theme="theme-3"] {
+    --mainBackground: #17062A;
+    --displayBackground: #1E0836;
+    --touchpad: #1E0836;
+    --toggle: #06DAD2;
+    --toggleHover: #91FEF8;
+    --textBtn: #FFE740;
+    --textBtnII: #FFE740;
+    --textBtnIII: #35352C;
+    --textColor: #FFE740;
+    --btnBackground: #321B4F;
+    --btnBackgroundHover: #6B34AC;
+    --borderBtn: #881FA0;
+    --btnResultBackground: #00DECF;
+    --btnResultBackgroundHover: #94FFF9;
+    --borderResult: #6EF7EF;
+    --btnResetAndDelBackground: #56077C;
+    --btnResetAndDelBackgroundHover: #8631B0;
+    --borderBtnResetAndDel: #BF16F5;
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--mainBackground);
+    transition: all 0.5s ease-in-out;
+}
+
+.calculator-container {
+    width: 400px;
+    max-width: 100%;
+}
+
+.calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculator-logo h2 {
+    color: var(--textColor);
+}
+
+
+.calculator-theme {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculator-theme span {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--textColor);
+}
+
+.input-container {
+    display: flex;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    position: relative;
+    background: var(--displayBackground);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--textColor);
+}
+
+
+
+.input-group:nth-child(1)::before {
+    content: "1";
+    position: absolute;
+    top: -18px;
+}
+
+.input-group:nth-child(2)::before {
+    content: "2";
+    position: absolute;
+    top: -18px;
+}
+
+.input-group:nth-child(3)::before {
+    content: "3";
+    position: absolute;
+    top: -18px;
+}
+
+input[type="radio"] {
+    /* remove standard background appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* create custom radiobutton appearance */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    /* background-color only for content */
+    background-clip: content-box;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+input[type="radio"]:hover {
+    background: var(--toggleHover);
+}
+
+input[type="radio"]:checked {
+    background: var(--toggle);
+}
+
+
+.input-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--textColor);
+}
+
+.calculator-display {
+    background: var(--displayBackground);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.calculator-display h1 {
+    color: var(--textColor);
+    text-align: right;
+}
+
+.calculator-groups {
+    background: var(--touchpad);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.btn {
+    border-radius: 0.4rem;
+    cursor: pointer;
+    outline: none;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: inherit;
+    font-size: 1.3rem;
+    background: var(--btnBackground);
+    border: none;
+    border-bottom: 3px solid var(--borderBtn);
+    transition: all 0.5s ease-in-out;
+    color: var(--textBtn);
+}
+
+.btn:hover {
+    background: var(--btnBackgroundHover);
+}
+
+.calculator-btns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.calculator-btn-bottom {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.btn-del, .btn-reset {
+    color: var(--textBtnII);
+    background: var(--btnResetAndDelBackground);
+    border-bottom: 3px solid var(--borderBtnResetAndDel);
+}
+
+.btn-del:hover, .btn-reset:hover {
+    background: var(--btnResetAndDelBackgroundHover);
+}
+
+.btn-result {
+    color: var(--textBtnIII);
+    background: var(--btnResultBackground);
+    border-bottom: 3px solid var(--borderResult);
+}
+
+
+.btn-result:hover {
+    background: var(--btnResultBackgroundHover);
+}
+
+@media screen and (max-width: 320px) {
+    .calculator-groups {
+        padding: 1rem;
+    }
+}
